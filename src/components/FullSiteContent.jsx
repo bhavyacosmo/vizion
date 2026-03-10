@@ -288,13 +288,13 @@ const FullSiteContent = () => {
                         </div>
                         <div className="footer-nav md:ml-auto md:pl-24">
                             <h4 className="text-xl font-bold mb-8 text-white">Quick Links</h4>
-                            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4 text-lg">
-                                <li><a href="#loyalty" className="text-white hover:text-yellow-500 transition-colors">Loyalty Program</a></li>
-                                <li><a href="#ordering" className="text-white hover:text-yellow-500 transition-colors">Online Ordering</a></li>
-                                <li><a href="#bulk" className="text-white hover:text-yellow-500 transition-colors">Bulk Pricing</a></li>
-                                <li><a href="#employees" className="text-white hover:text-yellow-500 transition-colors">Employees</a></li>
-                                <li><a href="#payments" className="text-white hover:text-yellow-500 transition-colors">Payments</a></li>
-                                <li><a href="#analytics" className="text-white hover:text-yellow-500 transition-colors">Analytics</a></li>
+                            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4 text-lg list-none m-0 p-0">
+                                <li><a href="#loyalty" className="text-white hover:text-yellow-500 transition-colors block" style={{ color: 'white' }}>Loyalty Program</a></li>
+                                <li><a href="#ordering" className="text-white hover:text-yellow-500 transition-colors block" style={{ color: 'white' }}>Online Ordering</a></li>
+                                <li><a href="#bulk" className="text-white hover:text-yellow-500 transition-colors block" style={{ color: 'white' }}>Bulk Pricing</a></li>
+                                <li><a href="#employees" className="text-white hover:text-yellow-500 transition-colors block" style={{ color: 'white' }}>Employees</a></li>
+                                <li><a href="#payments" className="text-white hover:text-yellow-500 transition-colors block" style={{ color: 'white' }}>Payments</a></li>
+                                <li><a href="#analytics" className="text-white hover:text-yellow-500 transition-colors block" style={{ color: 'white' }}>Analytics</a></li>
                             </ul>
                         </div>
                     </div>
