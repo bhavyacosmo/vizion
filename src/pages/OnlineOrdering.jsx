@@ -5,8 +5,10 @@ import {
 } from 'lucide-react';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
+import { useNavigate } from 'react-router-dom';
 
 const OnlineOrdering = () => {
+    const navigate = useNavigate();
     return (
         <div className="pt-32 min-h-screen bg-dark">
             {/* HERO SECTION */}
@@ -16,21 +18,17 @@ const OnlineOrdering = () => {
                     whileInView={{ opacity: 1, y: 0 }} 
                     viewport={{ once: true }}
                     transition={{ duration: 1 }}
+                    className="feature-content-only"
                 >
-                    <h1 className="section-title">
-                        YOUR STORE, ONLINE<br />OVERNIGHT
+                    <h1 className="hero-title-small">
+                        STREAMLINE YOUR <br /> ONLINE ORDERING
                     </h1>
-                    <p className="large-p mx-auto text-center mt-8">
+                    <p className="large-p mt-8">
                         Seamlessly sync your in-store inventory to a stunning, high-conversion online shop. Pickup and delivery, simplified.
                     </p>
-                    <div className="flex flex-col md:flex-row gap-8 justify-center mt-12 mb-20">
-                        <button className="btn-primary">Sign up now</button>
-                        <button className="btn-secondary">View Demo Store</button>
-                    </div>
-
-                    <div className="w-full max-w-5xl mx-auto aspect-video bg-dark-glass border border-glass-border rounded-3xl overflow-hidden relative group">
-                        <img src="/assets/images/ExpandYourReach.png" alt="Online Ordering Interface" className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-1000" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent opacity-80" />
+                    <div className="flex flex-col md:flex-row gap-6 justify-center mb-20">
+                        <button className="btn-primary px-12 py-5 text-xl" onClick={() => navigate('/signup')}>Sign up now</button>
+                        <button className="btn-secondary" onClick={() => navigate('/demo')}>Book a demo</button>
                     </div>
                 </motion.div>
             </section>
@@ -64,30 +62,26 @@ const OnlineOrdering = () => {
                         initial={{ opacity: 0 }} 
                         whileInView={{ opacity: 1 }} 
                         viewport={{ once: true }} 
-                        className="split-view items-center"
+                        className="feature-content-only"
                     >
-                        <div className="text-side p-12">
+
+                        <div className="text-center">
                             <h3 className="tagline">Transition</h3>
-                            <h2 className="section-title !text-left mt-4 uppercase">EFFORTLESS MOVE TO DIGITAL</h2>
-                            <p className="text-xl text-white/90 font-medium mt-8 leading-relaxed">
+                            <h2 className="section-title mt-4 uppercase">EFFORTLESS MOVE TO DIGITAL</h2>
+                            <p className="text-xl text-white/90 font-medium mt-8 leading-relaxed max-w-3xl mx-auto">
                                 Our team handles the heavy lifting. We'll have your products live and ready for orders with minimal work from your side.
                             </p>
-                            <div className="space-y-8 mt-12">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-20 text-left">
                                 {[
                                     { title: "Smart SEO Integration", desc: "Get found on Google with optimized product pages." },
                                     { title: "Mobile-First Design", desc: "Perfect shopping experience on any smartphone." },
                                     { title: "Secure Checkout", desc: "PCI-compliant processing for Every transaction." }
                                 ].map((feature, i) => (
-                                    <div key={i} className="group">
+                                    <div key={i} className="group glass-card p-8 border-accent/5 hover:border-accent/20">
                                         <h4 className="text-2xl font-bold text-white group-hover:text-accent transition-colors uppercase tracking-tight">{feature.title}</h4>
                                         <p className="text-lg text-dim mt-2">{feature.desc}</p>
                                     </div>
                                 ))}
-                            </div>
-                        </div>
-                        <div className="image-side">
-                            <div className="glass-card p-4 !bg-accent/5">
-                                <img src="/assets/images/TailorSystem1.png" alt="Digital Menu" className="w-full h-auto rounded-xl shadow-2xl" />
                             </div>
                         </div>
                     </motion.div>
@@ -104,10 +98,10 @@ const OnlineOrdering = () => {
                 >
                     <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
                     <h2 className="section-title uppercase">READY TO EXPAND?</h2>
-                    <p className="large-p mx-auto mt-8 mb-16">Join hundreds of merchants who scaled their business with Vizion Online.</p>
+                    <p className="large-p mx-auto mt-8 mb-16 max-w-2xl">Join hundreds of merchants who scaled their business with Vizion Online.</p>
                     <div className="flex flex-col sm:flex-row gap-8 justify-center">
-                        <button className="btn-primary px-16 py-6 text-2xl flex items-center gap-6 group">
-                            Get Started Now <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+                        <button className="btn-primary mt-16 px-16 py-6 text-2xl flex items-center gap-6 mx-auto group" onClick={() => navigate('/signup')}>
+                            Sign up Now <ArrowRight className="group-hover:translate-x-2 transition-transform" />
                         </button>
                     </div>
                 </motion.div>

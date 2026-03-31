@@ -6,8 +6,10 @@ import {
 } from 'lucide-react';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
+import { useNavigate } from 'react-router-dom';
 
 const Employees = () => {
+    const navigate = useNavigate();
     return (
         <div className="pt-32 min-h-screen bg-dark">
             {/* HERO SECTION */}
@@ -17,27 +19,17 @@ const Employees = () => {
                     whileInView={{ opacity: 1, y: 0 }} 
                     viewport={{ once: true }}
                     transition={{ duration: 1 }}
+                    className="feature-content-only"
                 >
-                    <h1 className="section-title">
+                    <h1 className="hero-title-small">
                         EMPOWER YOUR TEAM
                     </h1>
-                    <p className="large-p mx-auto text-center mt-8">
-                        Arm your staff with an intuitive POS designed for speed, accountability, and excellence.
+                    <p className="large-p mt-8">
+                        Arm your staff with an intuitive POS designed for speed, accountability, and excellence. Build a foundation for growth with tools that people love to use.
                     </p>
                     <div className="flex flex-col md:flex-row gap-8 justify-center mt-12 mb-20">
-                        <button className="btn-primary">Sign up now</button>
-                        <button className="btn-secondary">Book a demo</button>
-                    </div>
-
-                    <div className="w-full max-w-5xl mx-auto aspect-[16/10] bg-dark-glass border border-glass-border rounded-3xl overflow-hidden relative group">
-                        <img src="/assets/images/SuccessStory.png" alt="Employee Management" className="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-1000" />
-                        <div className="absolute inset-0 flex items-center justify-center p-12">
-                            <div className="bg-dark/80 backdrop-blur-md p-10 rounded-2xl border border-glass-border max-w-2xl">
-                                <Users className="text-accent mb-6" size={48} />
-                                <h3 className="text-2xl font-bold text-white uppercase tracking-tighter">Unified Workforce Management</h3>
-                                <p className="text-dim mt-4">Control permissions, track performance, and simplify tips in one interface.</p>
-                            </div>
-                        </div>
+                        <button className="btn-primary" onClick={() => navigate('/signup')}>Sign up now</button>
+                        <button className="btn-secondary" onClick={() => navigate('/demo')}>Book a demo</button>
                     </div>
                 </motion.div>
             </section>
@@ -48,31 +40,28 @@ const Employees = () => {
                     initial={{ opacity: 0 }} 
                     whileInView={{ opacity: 1 }} 
                     viewport={{ once: true }} 
-                    className="split-view"
+                    className="feature-content-only"
                 >
-                    <div className="text-side p-12">
+                    <div className="text-center">
                         <h3 className="tagline">Efficiency</h3>
-                        <h2 className="section-title !text-left mt-4 uppercase">QUICK ADAPTATION</h2>
-                        <p className="text-xl text-white/90 font-medium mt-8 leading-relaxed">
-                            A streamlined solution that empowers your team to work faster and smarter.
+                        <h2 className="section-title mt-4 uppercase">QUICK ADAPTATION</h2>
+                        <p className="text-xl text-white/90 font-medium mt-8 leading-relaxed max-w-3xl mx-auto">
+                            A streamlined solution that empowers your team to work faster and smarter. No long training sessions required.
                         </p>
-                        <div className="space-y-8 mt-12">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-20 text-left">
                             {[
                                 "Hassle-free, intuitive interface for all skill levels.",
                                 "Flexible customizations for perfect register flow.",
                                 "Reduce inquiries with Customer Facing Displays."
                             ].map((text, i) => (
-                                <div key={i} className="flex items-start gap-4">
+                                <div key={i} className="flex items-start gap-4 glass-card p-8 border-accent/5 hover:border-accent/20 transition-all">
                                     <CheckCircle2 className="text-accent shrink-0 mt-1" size={20} />
                                     <p className="text-lg text-dim">{text}</p>
                                 </div>
                             ))}
                         </div>
-                        <button className="btn-secondary mt-12">Book a demo</button>
-                    </div>
-                    <div className="image-side">
-                        <div className="glass-card p-4">
-                            <img src="/assets/images/TailorSystem1.png" alt="POS UI" className="w-full h-auto rounded-xl" />
+                        <div className="mt-16">
+                            <button className="btn-secondary" onClick={() => navigate('/demo')}>Book a demo</button>
                         </div>
                     </div>
                 </motion.div>
@@ -85,34 +74,35 @@ const Employees = () => {
                         initial={{ opacity: 0 }} 
                         whileInView={{ opacity: 1 }} 
                         viewport={{ once: true }} 
-                        className="split-view reverse"
+                        className="feature-content-only"
                     >
-                        <div className="text-side p-12">
+                        <div className="text-center">
                             <h3 className="tagline">Transparency</h3>
-                            <h2 className="section-title !text-left mt-4 uppercase">SIMPLIFIED GRATUITY</h2>
-                            <p className="text-xl text-white/90 font-medium mt-8 leading-relaxed">
-                                Complete transparency in tip management. consolidated, accurate, and error-free.
+                            <h2 className="section-title mt-4 uppercase">SIMPLIFIED GRATUITY</h2>
+                            <p className="text-xl text-white/90 font-medium mt-8 leading-relaxed max-w-3xl mx-auto">
+                                Complete transparency in tip management. consolidated, accurate, and error-free. Every cent accounted for.
                             </p>
-                            <ul className="space-y-8 mt-12">
-                                {[
-                                    "Direct system input for all tips.",
-                                    "Full history and accountability tracking.",
-                                    "Completely customizable gratuity rules."
-                                ].map((item, i) => (
-                                    <li key={i} className="flex items-center gap-6 group">
-                                        <div className="w-2 h-2 rounded-full bg-accent group-hover:scale-150 transition-transform shadow-[0_0_10px_rgba(206,144,54,0.5)]" />
-                                        <p className="text-xl text-dim font-medium">{item}</p>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div className="image-side">
-                            <div className="aspect-square max-w-lg mx-auto glass-card flex flex-col items-center justify-center p-16 text-center">
-                                <div className="w-24 h-24 rounded-full bg-accent/10 flex items-center justify-center mb-10 border border-accent/20">
-                                    <HandCoins className="text-accent" size={48} />
+                            
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-20">
+                                <div className="text-left space-y-8">
+                                    {[
+                                        "Direct system input for all tips.",
+                                        "Full history and accountability tracking.",
+                                        "Completely customizable gratuity rules."
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-center gap-6 group">
+                                            <div className="w-2 h-2 rounded-full bg-accent group-hover:scale-150 transition-transform shadow-[0_0_10px_rgba(206,144,54,0.5)]" />
+                                            <p className="text-xl text-dim font-medium">{item}</p>
+                                        </li>
+                                    ))}
                                 </div>
-                                <h4 className="text-2xl font-bold text-white mb-4">TERMINAL SYNC</h4>
-                                <p className="text-dim">Tips are synced instantly from your hardware to the dashboard reports.</p>
+                                <div className="glass-card flex flex-col items-center justify-center p-12 text-center !bg-accent/5">
+                                    <div className="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mb-8 border border-accent/20">
+                                        <HandCoins className="text-accent" size={32} />
+                                    </div>
+                                    <h4 className="text-2xl font-bold text-white mb-4">TERMINAL SYNC</h4>
+                                    <p className="text-dim">Tips are synced instantly from your hardware to the dashboard reports.</p>
+                                </div>
                             </div>
                         </div>
                     </motion.div>
@@ -152,12 +142,15 @@ const Employees = () => {
                     initial={{ scale: 0.95, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     viewport={{ once: true }}
-                    className="glass-card p-24 text-center relative overflow-hidden"
+                    className="glass-card p-24 text-center relative overflow-hidden feature-content-only"
                 >
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-accent/20 blur-xl" />
                     <h2 className="section-title uppercase">READY TO EMPOWER?</h2>
-                    <p className="large-p mx-auto mt-8">Transform how your staff handles checkout, tips, and sales performance.</p>
-                    <button className="btn-primary mt-16 px-16 py-6 text-2xl flex items-center gap-6 mx-auto group">
+                    <p className="large-p mt-8">Transform how your staff handles checkout, tips, and sales performance.</p>
+                    <button 
+                        className="btn-primary mt-16 px-16 py-6 text-2xl flex items-center gap-6 mx-auto group"
+                        onClick={() => navigate('/signup')}
+                    >
                         Sign up Now <ArrowRight className="group-hover:translate-x-2 transition-transform" />
                     </button>
                 </motion.div>

@@ -8,7 +8,10 @@ import {
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
 
+import { useNavigate } from 'react-router-dom';
+
 const Payments = () => {
+    const navigate = useNavigate();
     return (
         <div className="pt-32 min-h-screen bg-dark">
             {/* HERO SECTION */}
@@ -18,27 +21,17 @@ const Payments = () => {
                     whileInView={{ opacity: 1, y: 0 }} 
                     viewport={{ once: true }}
                     transition={{ duration: 1 }}
+                    className="feature-content-only"
                 >
-                    <h1 className="section-title">
-                        SECURE PAYMENTS<br />INTEGRATED FOR GROWTH
+                    <h1 className="hero-title-small">
+                        SECURE PAYMENTS <br /> INTEGRATED FOR GROWTH
                     </h1>
-                    <p className="large-p mx-auto text-center mt-8">
-                        Unlock the potential of your business with Vizion Payments. Seamlessly manage sales, secure transactions, and scale operations.
+                    <p className="large-p mt-8">
+                        Unlock the potential of your business with Vizion Payments. Seamlessly manage sales, secure transactions, and scale operations with elite protection.
                     </p>
                     <div className="flex flex-col md:flex-row gap-8 justify-center mt-12 mb-20">
-                        <button className="btn-primary">Sign up Now</button>
-                        <button className="btn-secondary">Book a demo</button>
-                    </div>
-
-                    <div className="w-full max-w-5xl mx-auto aspect-[16/9] bg-dark-glass border border-glass-border rounded-3xl overflow-hidden relative group">
-                        <img src="/assets/images/SuccessStory.png" alt="Payment Terminal" className="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-1000" />
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="p-12 bg-dark/60 backdrop-blur-xl border border-glass-border rounded-2xl max-w-md">
-                                <CreditCard className="text-accent mb-6" size={48} />
-                                <h3 className="text-2xl font-bold text-white uppercase tracking-tighter">Unified Processing</h3>
-                                <p className="text-dim mt-4">One platform for your POS, hardware, and payment processing needs.</p>
-                            </div>
-                        </div>
+                        <button className="btn-primary" onClick={() => navigate('/signup')}>Sign up Now</button>
+                        <button className="btn-secondary" onClick={() => navigate('/demo')}>Book a demo</button>
                     </div>
                 </motion.div>
             </section>
@@ -76,24 +69,19 @@ const Payments = () => {
                     initial={{ opacity: 0 }} 
                     whileInView={{ opacity: 1 }} 
                     viewport={{ once: true }} 
-                    className="split-view items-center"
+                    className="feature-content-only"
                 >
-                    <div className="image-side">
-                        <div className="glass-card p-4">
-                            <img src="/assets/images/TailorSystem2.png" alt="POS & Payment" className="w-full h-auto rounded-xl" />
-                        </div>
-                    </div>
-                    <div className="text-side p-12">
+                    <div className="text-center">
                         <h3 className="tagline">Efficiency</h3>
-                        <h2 className="section-title !text-left mt-4 uppercase">SINGLE SOLUTION EFFICIENCY</h2>
-                        <div className="space-y-10 mt-12">
+                        <h2 className="section-title mt-4 uppercase">SINGLE SOLUTION EFFICIENCY</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-20 text-left">
                             {[
                                 "Launch fast with our user-friendly onboarding process.",
                                 "Unified operations: Hardware, software, and support in one place.",
                                 "Leverage payment data to tailor your customer experience.",
                                 "Comprehensive overview of sales across multiple locations."
                             ].map((text, i) => (
-                                <div key={i} className="flex gap-6 items-start">
+                                <div key={i} className="flex gap-6 items-start glass-card p-8 border-accent/5 hover:border-accent/20 transition-all">
                                     <ArrowRight className="text-accent shrink-0 mt-1" size={24} />
                                     <p className="text-xl text-dim font-medium">{text}</p>
                                 </div>
@@ -155,7 +143,7 @@ const Payments = () => {
                                 </li>
                             ))}
                         </ul>
-                        <button className="btn-primary mt-12 w-full">Sign Up Now</button>
+                        <button className="btn-primary mt-12 w-full" onClick={() => navigate('/signup')}>Sign Up Now</button>
                     </motion.div>
 
                     {/* SECURITY */}
@@ -182,7 +170,25 @@ const Payments = () => {
                     </motion.div>
                  </div>
             </section>
-
+            {/* FINAL CTA */}
+            <section className="section-container pb-40">
+                <motion.div
+                    initial={{ scale: 0.95, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="glass-card p-24 text-center relative overflow-hidden feature-content-only"
+                >
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-accent/20 blur-xl" />
+                    <h2 className="section-title uppercase">READY TO TRANSACT?</h2>
+                    <p className="large-p mt-8 italic">Experience the elite standard in POS payments.</p>
+                    <button 
+                        className="btn-primary mt-16 px-16 py-6 text-2xl flex items-center gap-6 mx-auto group"
+                        onClick={() => navigate('/signup')}
+                    >
+                        Sign up Now <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+                    </button>
+                </motion.div>
+            </section>
             <FAQ />
             <Footer />
         </div>

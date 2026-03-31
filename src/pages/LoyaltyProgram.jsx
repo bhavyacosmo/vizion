@@ -5,8 +5,10 @@ import {
 } from 'lucide-react';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
+import { useNavigate } from 'react-router-dom';
 
 const LoyaltyProgram = () => {
+    const navigate = useNavigate();
     return (
         <div className="pt-32 min-h-screen bg-dark">
             {/* HERO SECTION */}
@@ -16,21 +18,17 @@ const LoyaltyProgram = () => {
                     whileInView={{ opacity: 1, y: 0 }} 
                     viewport={{ once: true }}
                     transition={{ duration: 1 }}
+                    className="feature-content-only"
                 >
-                    <h1 className="section-title">
-                        REWARD LOYALTY<br />DRIVE REVENUE
+                    <h1 className="hero-title-small">
+                        REWARD LOYALTY <br /> DRIVE REVENUE
                     </h1>
-                    <p className="large-p mx-auto text-center mt-8">
+                    <p className="large-p mt-8">
                         Turn every customer into a regular with our integrated, multi-channel loyalty platform. Reward, engage, and grow.
                     </p>
                     <div className="flex flex-col md:flex-row gap-8 justify-center mt-12 mb-20">
-                        <button className="btn-primary">Sign up Now</button>
-                        <button className="btn-secondary">How it works</button>
-                    </div>
-
-                    <div className="w-full max-w-5xl mx-auto aspect-video bg-dark-glass border border-glass-border rounded-3xl overflow-hidden relative group">
-                        <img src="/assets/images/LoyaltyProgram.png" alt="Loyalty App" className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-1000" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60" />
+                        <button className="btn-primary" onClick={() => navigate('/signup')}>Sign up now</button>
+                        <button className="btn-secondary" onClick={() => navigate('/demo')}>How it works</button>
                     </div>
                 </motion.div>
             </section>
@@ -66,18 +64,19 @@ const LoyaltyProgram = () => {
                     initial={{ opacity: 0 }} 
                     whileInView={{ opacity: 1 }} 
                     viewport={{ once: true }} 
-                    className="split-view reverse items-center"
+                    className="feature-content-only"
                 >
-                    <div className="text-side p-12">
+                    <div className="text-center">
                         <h3 className="tagline">Strategy</h3>
-                        <h2 className="section-title !text-left mt-4 uppercase">ADVANCED BONUS CAMPAIGNS</h2>
-                        <ul className="space-y-10 mt-12">
+                        <h2 className="section-title mt-4 uppercase">ADVANCED BONUS CAMPAIGNS</h2>
+                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-20 text-left">
                             {[
                                 { title: "Custom Point Rules", desc: "Set specific rewards for specific products or time periods." },
                                 { title: "Automated Reachouts", desc: "Engage inactive customers with personalized bonus offers." },
-                                { title: "Seamless Integration", desc: "Points are tracked automatically at the POS—no extra hardware." }
+                                { title: "Seamless Integration", desc: "Points are tracked automatically at the POS—no extra hardware." },
+                                { title: "Direct Communication", desc: "Connect with your most loyal customers through targeted messages and exclusive offers." }
                             ].map((item, i) => (
-                                <li key={i} className="flex gap-8 group">
+                                <li key={i} className="flex gap-8 group glass-card p-8 !bg-accent/5">
                                     <div className="shrink-0 w-12 h-12 rounded-full border border-accent/30 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-dark transition-all">
                                         <CheckCircle2 size={24} />
                                     </div>
@@ -89,14 +88,27 @@ const LoyaltyProgram = () => {
                             ))}
                         </ul>
                     </div>
-                    <div className="image-side">
-                        <div className="glass-card p-4 !bg-accent/5">
-                            <img src="/assets/images/TailorSystem2.png" alt="Loyalty Dashboard" className="w-full h-auto rounded-xl shadow-2xl" />
-                        </div>
-                    </div>
                 </motion.div>
             </section>
-
+            {/* FINAL CTA */}
+            <section className="section-container pb-40">
+                <motion.div
+                    initial={{ scale: 0.95, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="glass-card p-24 text-center relative overflow-hidden feature-content-only"
+                >
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-accent/20 blur-xl" />
+                    <h2 className="section-title uppercase">READY TO REWARD?</h2>
+                    <p className="large-p mt-8 italic">Build your loyalty program now.</p>
+                    <button 
+                        className="btn-primary mt-16 px-16 py-6 text-2xl flex items-center gap-6 mx-auto group"
+                        onClick={() => navigate('/signup')}
+                    >
+                        Sign up Now <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+                    </button>
+                </motion.div>
+            </section>
             <FAQ />
             <Footer />
         </div>

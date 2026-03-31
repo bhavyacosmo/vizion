@@ -28,6 +28,7 @@ function App() {
           <div className="navbar-container">
             <Link to="/" className="logo-section">
               <img src="/logo.png" alt="Vizion Logo" className="navbar-logo-img" />
+              <span className="logo-text-v2">VIZION POS</span>
             </Link>
             
             <div className="nav-actions-v2">

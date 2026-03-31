@@ -33,20 +33,15 @@ const Analytics = () => {
         <div className="pt-32 min-h-screen bg-dark">
             {/* HERO SECTION */}
             <section className="section-container text-center py-20">
-                <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
-                    <h1 className="text-5xl md:text-6xl font-bold mb-8 text-gray-900 leading-tight">
-                        Empower your decisions with <br /> in-depth POS reporting
+                <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants} className="feature-content-only">
+                    <h1 className="hero-title-small">
+                        EMPOWER YOUR DECISIONS WITH <br /> IN-DEPTH POS REPORTING
                     </h1>
-                    <p className="text-xl text-dim max-w-4xl mx-auto mb-12 leading-relaxed">
+                    <p className="text-xl text-dim mb-12 leading-relaxed">
                         Leverage Vizion's robust analytics tools for real-time insights into the sales trends and data shaping your business, and monitor vital metrics such as revenue and performance.
                     </p>
                     <div className="flex flex-col md:flex-row gap-6 justify-center mb-20">
-                        <button className="btn-primary px-12 py-5 text-xl">Sign up now</button>
-                    </div>
-
-                    <div className="w-full max-w-5xl mx-auto aspect-[16/10] bg-white/5 border border-white/10 rounded-3xl flex items-center justify-center text-dim italic shadow-2xl relative overflow-hidden group">
-                        <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
-                        <span className="relative z-10">[Image: Laptop showing Sales Report Dashboard]</span>
+                        <button className="btn-primary px-12 py-5 text-xl" onClick={() => navigate('/signup')}>Sign up now</button>
                     </div>
                 </motion.div>
             </section>
@@ -85,24 +80,19 @@ const Analytics = () => {
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={sectionVariants}
-                    className="glass-card p-12 flex flex-col md:flex-row items-center gap-16 border-2 border-white/5"
+                    className="glass-card p-12 text-center border-2 border-white/5 feature-content-only"
                 >
-                    <div className="flex-1">
+                    <div className="max-w-3xl mx-auto">
                         <h2 className="text-5xl font-bold mb-8 text-gray-900 leading-tight">Set higher standards <br /> for your business</h2>
-                        <p className="text-xl text-dim mb-10">Find out how Vizion can improve your business through a personalized demo provided by our team.</p>
-                        <div className="flex flex-col sm:flex-row gap-6">
-                            <button className="btn-secondary px-10 py-4">Contact Us</button>
-                            <button className="flex items-center gap-4 text-xl font-semibold text-gray-900 group">
+                        <p className="text-xl text-dim mb-10">Find out how Vizion can improve your business through a personalized demo provided by our team. We'll show you exactly how our data can work for you.</p>
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                            <button className="btn-secondary px-10 py-4" onClick={() => navigate('/demo')}>Contact Us</button>
+                            <button className="flex items-center gap-4 text-xl font-semibold text-gray-900 group" onClick={() => navigate('/demo')}>
                                 <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center transition-colors" style={{ '--tw-bg-opacity': 1 }} onMouseEnter={e => e.currentTarget.style.background = '#ce9036'} onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}>
-                                    <Play className="fill-white w-5 h-5" />
+                                    <Zap className="text-white w-6 h-6" />
                                 </div>
-                                Play Video
+                                Explore Tools
                             </button>
-                        </div>
-                    </div>
-                    <div className="flex-1 w-full">
-                        <div className="w-full max-w-lg mx-auto aspect-[4/3] glass-card border-white/10 flex items-center justify-center text-dim italic">
-                            [Image: Business Dashboard Graphic]
                         </div>
                     </div>
                 </motion.div>
@@ -116,67 +106,71 @@ const Analytics = () => {
 
                 <div className="space-y-32">
                     {/* TRACK SALES */}
-                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants} className="flex flex-col md:flex-row items-center gap-16">
-                        <div className="flex-1">
-                            <div className="aspect-video glass-card border-white/10 flex items-center justify-center text-dim italic">
-                                [Image: Real-time Sales Chart Preview]
+                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants} className="feature-content-only">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
+                            <div>
+                                <h3 className="text-3xl font-bold text-gray-900 mb-6">Track sales as they happen</h3>
+                                <p className="text-xl text-dim leading-relaxed">Stay informed about total overall and hourly revenue, best-selling items, refund and discount statistics, open orders, and more.</p>
                             </div>
-                        </div>
-                        <div className="flex-1">
-                            <h3 className="text-3xl font-bold text-gray-900 mb-6">Track sales as they happen</h3>
-                            <p className="text-xl text-dim mb-10 leading-relaxed">Stay informed about total overall and hourly revenue, best-selling items, refund and discount statistics, open orders, and more.</p>
-
-                            <h3 className="text-3xl font-bold text-gray-900 mb-6">Multi-location sales insights</h3>
-                            <p className="text-xl text-dim mb-10 leading-relaxed">View total sales data that covers all your locations, both online and in-store.</p>
-
-                            <h3 className="text-3xl font-bold text-gray-900 mb-6">Access 24/7, Anywhere</h3>
-                            <p className="text-xl text-dim leading-relaxed">Monitor real-time sales no matter where you are. Simply access your dashboard on your mobile phone or laptop.</p>
+                            <div>
+                                <h3 className="text-3xl font-bold text-gray-900 mb-6">Multi-location sales insights</h3>
+                                <p className="text-xl text-dim leading-relaxed">View total sales data that covers all your locations, both online and in-store.</p>
+                            </div>
+                            <div>
+                                <h3 className="text-3xl font-bold text-gray-900 mb-6">Access 24/7, Anywhere</h3>
+                                <p className="text-xl text-dim leading-relaxed">Monitor real-time sales no matter where you are. Simply access your dashboard on your mobile phone or laptop.</p>
+                            </div>
                         </div>
                     </motion.div>
 
                     {/* GAIN CONTROL */}
-                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants} className="flex flex-col md:flex-row-reverse items-center gap-16">
-                        <div className="flex-1">
-                            <div className="aspect-video glass-card border-white/10 flex items-center justify-center text-dim italic">
-                                [Image: Top Performing Items & Team Members UI]
-                            </div>
+                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants} className="bg-dark-glass p-16 rounded-[3rem] border border-glass-border">
+                        <div className="text-center mb-16">
+                            <h2 className="text-4xl font-bold text-gray-900 mb-4 uppercase tracking-tighter italic">Gain control over your data</h2>
                         </div>
-                        <div className="flex-1">
-                            <h2 className="text-4xl font-bold text-gray-900 mb-10 uppercase tracking-tighter italic">Gain control over your data</h2>
-                            <div className="space-y-10">
-                                <div>
-                                    <h4 className="text-2xl font-bold text-gray-900 mb-3">Snapshot of performance</h4>
-                                    <p className="text-lg text-dim">Find out which items, locations, times, and team members perform the best and worst through Vizion's sales tracking system.</p>
-                                </div>
-                                <div>
-                                    <h4 className="text-2xl font-bold text-gray-900 mb-3">Simplified tax preparation</h4>
-                                    <p className="text-lg text-dim">Expedite and simplify the tax filing process with readily available POS reports that you can provide to your accountant or tax preparer.</p>
-                                </div>
-                                <div>
-                                    <h4 className="text-2xl font-bold text-gray-900 mb-3">Custom business analytics</h4>
-                                    <p className="text-lg text-dim">Generate the reports that will aid in making better decisions for your business's overall performance and health.</p>
-                                </div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                            <div className="glass-card p-10 border-accent/5">
+                                <h4 className="text-2xl font-bold text-gray-900 mb-4">Snapshot of performance</h4>
+                                <p className="text-lg text-dim">Find out which items, locations, times, and team members perform the best and worst through Vizion's sales tracking system.</p>
+                            </div>
+                            <div className="glass-card p-10 border-accent/5">
+                                <h4 className="text-2xl font-bold text-gray-900 mb-4">Simplified tax preparation</h4>
+                                <p className="text-lg text-dim">Expedite and simplify the tax filing process with readily available POS reports that you can provide to your accountant or tax preparer.</p>
+                            </div>
+                            <div className="glass-card p-10 border-accent/5">
+                                <h4 className="text-2xl font-bold text-gray-900 mb-4">Custom business analytics</h4>
+                                <p className="text-lg text-dim">Generate the reports that will aid in making better decisions for your business's overall performance and health.</p>
                             </div>
                         </div>
                     </motion.div>
 
                     {/* END OF DAY */}
-                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants} className="flex flex-col md:flex-row items-center gap-16">
-                        <div className="flex-1">
-                            <div className="aspect-video glass-card border-white/10 flex items-center justify-center text-dim italic">
-                                [Image: End of Day Summary Report UI]
-                            </div>
+                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants} className="feature-content-only">
+                        <div className="text-center mb-16">
+                            <h2 className="text-4xl font-bold text-gray-900 mb-4 uppercase tracking-tighter italic">Explore end-of-day analytics</h2>
                         </div>
-                        <div className="flex-1">
-                            <h2 className="text-4xl font-bold text-gray-900 mb-10 uppercase tracking-tighter italic">Explore end-of-day analytics</h2>
-                            <div className="space-y-10">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
+                            <div className="flex gap-6 items-start group">
+                                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0 text-accent group-hover:bg-accent group-hover:text-dark transition-all">
+                                    <Zap size={24} />
+                                </div>
                                 <div>
                                     <h4 className="text-2xl font-bold text-gray-900 mb-3">Total Sales and Refunds</h4>
                                     <p className="text-lg text-dim">Obtain an overview of your day immediately upon closing out.</p>
                                 </div>
+                            </div>
+                            <div className="flex gap-6 items-start group">
+                                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0 text-accent group-hover:bg-accent group-hover:text-dark transition-all">
+                                    <Zap size={24} />
+                                </div>
                                 <div>
                                     <h4 className="text-2xl font-bold text-gray-900 mb-3">Tip Amounts</h4>
                                     <p className="text-lg text-dim">Monitor overall sales per staff member. Allocate tips to your team.</p>
+                                </div>
+                            </div>
+                            <div className="flex gap-6 items-start group">
+                                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0 text-accent group-hover:bg-accent group-hover:text-dark transition-all">
+                                    <Zap size={24} />
                                 </div>
                                 <div>
                                     <h4 className="text-2xl font-bold text-gray-900 mb-3">Card Payments</h4>
@@ -195,7 +189,7 @@ const Analytics = () => {
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={sectionVariants}
-                    className="glass-card p-20 bg-white/10 relative overflow-hidden flex flex-col items-center text-center"
+                    className="glass-card p-20 bg-white/10 relative overflow-hidden flex flex-col items-center text-center feature-content-only"
                 >
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
                     <h2 className="text-5xl font-bold mb-8 text-white">Ready to supercharge your business?</h2>
@@ -203,8 +197,8 @@ const Analytics = () => {
                         Build your POS System now.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-6">
-                        <button className="btn-primary px-16 py-6 text-2xl">Sign up Now</button>
-                        <button className="btn-secondary px-16 py-6 text-2xl">Shop Vizion</button>
+                        <button className="btn-primary px-16 py-6 text-2xl" onClick={() => navigate('/signup')}>Sign up Now</button>
+                        <button className="btn-secondary px-16 py-6 text-2xl" onClick={() => navigate('/signup')}>Shop Vizion</button>
                     </div>
                 </motion.div>
             </section>

@@ -248,6 +248,7 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
+  text-decoration: none !important;
 }
 
 .navbar-logo-img {
@@ -256,11 +257,11 @@ body {
 }
 
 .logo-text-v2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #C19A6B;
-  /* Gold/Bronze from screenshot */
-  letter-spacing: 2px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 .nav-actions-v2 {
@@ -1258,32 +1259,31 @@ body {
 
 .signup-label {
     display: block;
-    font-size: 0.65rem;
-    font-weight: 800;
+    font-size: 0.8rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.25em;
-    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.1em;
+    color: #1e293b;
     margin-bottom: 0.75rem;
     transition: color 0.3s ease;
 }
 
 .signup-input {
     width: 100%;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    color: white;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #0f172a;
     padding: 1.1rem 1.4rem;
-    border-radius: 14px;
+    border-radius: 12px;
     font-size: 1rem;
     font-weight: 500;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.3s ease;
 }
 
 .signup-input:focus {
     outline: none;
-    background: rgba(206, 144, 54, 0.03);
-    border-color: var(--accent);
-    box-shadow: 0 0 30px rgba(206, 144, 54, 0.1);
+    border-color: #5A92D6;
+    box-shadow: 0 0 0 4px rgba(90, 146, 214, 0.1);
 }
 
 .signup-input:focus + .signup-label {
@@ -1291,14 +1291,14 @@ body {
 }
 
 .signup-sublabel {
-    font-size: 0.75rem;
-    line-height: 1.7;
+    font-size: 0.85rem;
+    line-height: 1.6;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.25);
+    color: #64748b;
 }
 
 .signup-sublabel .font-bold {
-    color: rgba(255, 255, 255, 0.5);
+    color: #1e293b;
 }
 .signup-glass-card {
   background: rgba(255, 255, 255, 0.01);
@@ -1367,9 +1367,11 @@ body {
 .pt-32 { padding-top: 8rem; }
 .pb-40 { padding-bottom: 10rem; }
 .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+.py-24 { padding-top: 6rem; padding-bottom: 6rem; }
 .py-32 { padding-top: 8rem; padding-bottom: 8rem; }
 .mt-8 { margin-top: 2rem; }
 .mt-12 { margin-top: 3rem; }
+.mb-12 { margin-bottom: 3rem; }
 .mt-16 { margin-top: 4rem; }
 .mb-16 { margin-bottom: 4rem; }
 .mb-20 { margin-bottom: 5rem; }
@@ -1435,11 +1437,13 @@ body {
 
 .rotate-180 { transform: rotate(180deg); }
 .space-y-6 > * + * { margin-top: 1.5rem; }
+.space-y-32 > * + * { margin-top: 8rem; }
 .max-w-4xl { max-width: 56rem; }
 .px-10 { padding-left: 2.5rem; padding-right: 2.5rem; }
 .pb-10 { padding-bottom: 2.5rem; }
 .pt-0 { padding-top: 0; }
 .p-10 { padding: 2.5rem; }
+.p-16 { padding: 4rem; }
 .duration-500 { transition-duration: 500ms; }
 
 
@@ -1458,3 +1462,40 @@ body {
 .border-accent\/20 { border-color: rgba(206, 144, 54, 0.2); }
 .bg-dark-glass { background-color: rgba(0, 0, 0, 0.03); }
 .border-glass-border { border-color: rgba(0, 0, 0, 0.08); }
+
+/* Layout Utilities for Media-less Pages */
+.feature-content-only {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-title-small {
+  font-size: clamp(2.2rem, 5vw, 3.8rem) !important;
+  line-height: 1.2 !important;
+  font-weight: 800 !important;
+  margin-bottom: 2rem !important;
+  text-align: center !important;
+}
+
+.feature-content-left {
+  text-align: left;
+  margin-right: auto;
+  max-width: 800px;
+}
+
+.feature-content-right {
+  text-align: right;
+  margin-left: auto;
+  max-width: 800px;
+}
+
+.split-view.no-media {
+  display: block;
+  width: 100%;
+}
+

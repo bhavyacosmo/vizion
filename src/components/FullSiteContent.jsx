@@ -130,7 +130,7 @@ const FullSiteContent = () => {
                             <img src="/assets/images/VizionPOS.png" alt="Hardware" />
                         </div>
                         <div className="bento-card bento-button-card bento-col-3-bottom bento-item">
-                            <Link to="https://merchants.vizion.com/" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ textDecoration: 'none' }}>SHOP NOW</Link>
+                            <a href="https://vizionpos.com" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ textDecoration: 'none', display: 'inline-block' }}>SHOP NOW</a>
                         </div>
                     </div>
                 </motion.div>
@@ -239,7 +239,7 @@ const FullSiteContent = () => {
                         <p className="mb-6 text-lg">Vizion POS introduces a customer-friendly store credit feature, empowering merchants to offer credits for future purchases instead of direct refunds. This strategy keeps revenue in-store and nurtures repeat patronage, strengthening customer loyalty and trust.</p>
                         <p className="mb-6 text-lg">Vizion's integrated store credit functionality also streamlines the handling of returns and exchanges.</p>
                         <p className="mb-10 text-lg">Vizion provides efficient monitoring and management of credit balances, ensuring precise and transparent transactions. This approach not only maintains sales but also enhances the overall shopping experience for customers, adding significant value to each interaction.</p>
-                         <Link to="/credits" className="btn-secondary mb-12" style={{ textDecoration: 'none', display: 'inline-block' }}>Store Credits & Refunds</Link>
+                         <a href="https://vizionpos.com" target="_blank" rel="noopener noreferrer" className="btn-secondary mb-12" style={{ textDecoration: 'none', display: 'inline-block' }}>Store Credits & Refunds</a>
                     </div>
                     <img src="/assets/images/EasyHandlingofStoreCreditsandRefunds.png" alt="Store Credit UI" className="w-full max-w-2xl h-auto rounded-xl shadow-2xl relative z-0 border border-white/10" />
                 </motion.div>
@@ -253,7 +253,7 @@ const FullSiteContent = () => {
                         <h2 className="section-title">Manage Inventory with Ease</h2>
                         <p className="mb-6 text-xl">Efficiently handle everything from introducing new products, crafting variants, to tracking inventory levels with Vizion's robust cloud-based system.</p>
                         <p className="text-dim">Seamlessly integrate all your sales channels into one unified platform, simplifying your entire inventory management process.</p>
-                         <Link to="/inventory" className="btn-primary mt-10" style={{ textDecoration: 'none', display: 'inline-block' }}>Inventory Management</Link>
+                         <a href="https://vizionpos.com" target="_blank" rel="noopener noreferrer" className="btn-primary mt-10" style={{ textDecoration: 'none', display: 'inline-block' }}>Inventory Management</a>
                     </div>
                 </motion.div>
             </section>
