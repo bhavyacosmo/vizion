@@ -5,10 +5,7 @@ import {
 } from 'lucide-react';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
-import { useNavigate } from 'react-router-dom';
-
 const LoyaltyProgram = () => {
-    const navigate = useNavigate();
     return (
         <div className="pt-32 min-h-screen bg-dark">
             {/* HERO SECTION */}
@@ -27,8 +24,8 @@ const LoyaltyProgram = () => {
                         Turn every customer into a regular with our integrated, multi-channel loyalty platform. Reward, engage, and grow.
                     </p>
                     <div className="flex flex-col md:flex-row gap-8 justify-center mt-12 mb-20">
-                        <button className="btn-primary" onClick={() => navigate('/signup')}>Sign up now</button>
-                        <button className="btn-secondary" onClick={() => navigate('/demo')}>How it works</button>
+                        <button className="btn-primary" onClick={() => window.location.href = 'https://cal.com/piyushchandak/30min'}>Sign up now</button>
+                        <button className="btn-secondary" onClick={() => window.location.href = 'https://cal.com/piyushchandak/30min'}>How it works</button>
                     </div>
                 </motion.div>
             </section>
@@ -103,7 +100,7 @@ const LoyaltyProgram = () => {
                     <p className="large-p mt-8 italic">Build your loyalty program now.</p>
                     <button 
                         className="btn-primary mt-16 px-16 py-6 text-2xl flex items-center gap-6 mx-auto group"
-                        onClick={() => navigate('/signup')}
+                        onClick={() => window.location.href = 'https://cal.com/piyushchandak/30min'}
                     >
                         Sign up Now <ArrowRight className="group-hover:translate-x-2 transition-transform" />
                     </button>

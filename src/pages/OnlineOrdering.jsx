@@ -27,8 +27,8 @@ const OnlineOrdering = () => {
                         Seamlessly sync your in-store inventory to a stunning, high-conversion online shop. Pickup and delivery, simplified.
                     </p>
                     <div className="flex flex-col md:flex-row gap-6 justify-center mb-20">
-                        <button className="btn-primary px-12 py-5 text-xl" onClick={() => navigate('/signup')}>Sign up now</button>
-                        <button className="btn-secondary" onClick={() => navigate('/demo')}>Book a demo</button>
+                        <button className="btn-primary px-12 py-5 text-xl" onClick={() => window.location.href = 'https://cal.com/piyushchandak/30min'}>Sign up now</button>
+                        <button className="btn-secondary" onClick={() => window.location.href = 'https://cal.com/piyushchandak/30min'}>Book a demo</button>
                     </div>
                 </motion.div>
             </section>
@@ -100,9 +100,9 @@ const OnlineOrdering = () => {
                     <h2 className="section-title uppercase">READY TO EXPAND?</h2>
                     <p className="large-p mx-auto mt-8 mb-16 max-w-2xl">Join hundreds of merchants who scaled their business with Vizion Online.</p>
                     <div className="flex flex-col sm:flex-row gap-8 justify-center">
-                        <button className="btn-primary mt-16 px-16 py-6 text-2xl flex items-center gap-6 mx-auto group" onClick={() => navigate('/signup')}>
-                            Sign up Now <ArrowRight className="group-hover:translate-x-2 transition-transform" />
-                        </button>
+                    <button className="btn-primary mt-16 px-16 py-6 text-2xl flex items-center gap-6 mx-auto group" onClick={() => window.location.href = 'https://cal.com/piyushchandak/30min'}>
+                        Sign up Now <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+                    </button>
                     </div>
                 </motion.div>
             </section>

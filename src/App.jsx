@@ -61,8 +61,8 @@ function App() {
                 <Phone size={18} className="phone-icon-v2" />
                 <span>929-204-4923</span>
               </div>
-                <Link to="/demo" className="btn-navbar-pill" style={{ textDecoration: 'none' }}>Request Demo</Link>
-              <Link to="/signup" className="btn-navbar-pill-accent" style={{ textDecoration: 'none' }}>Sign up Now</Link>
+                <a href="https://cal.com/piyushchandak/30min" className="btn-navbar-pill" style={{ textDecoration: 'none' }}>Request Demo</a>
+              <a href="https://cal.com/piyushchandak/30min" className="btn-navbar-pill-accent" style={{ textDecoration: 'none' }}>Sign up Now</a>
             </div>
           </div>
         </nav>

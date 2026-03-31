@@ -8,10 +8,7 @@ import {
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
 
-import { useNavigate } from 'react-router-dom';
-
 const Payments = () => {
-    const navigate = useNavigate();
     return (
         <div className="pt-32 min-h-screen bg-dark">
             {/* HERO SECTION */}
@@ -30,8 +27,8 @@ const Payments = () => {
                         Unlock the potential of your business with Vizion Payments. Seamlessly manage sales, secure transactions, and scale operations with elite protection.
                     </p>
                     <div className="flex flex-col md:flex-row gap-8 justify-center mt-12 mb-20">
-                        <button className="btn-primary" onClick={() => navigate('/signup')}>Sign up Now</button>
-                        <button className="btn-secondary" onClick={() => navigate('/demo')}>Book a demo</button>
+                        <button className="btn-primary" onClick={() => window.location.href = 'https://cal.com/piyushchandak/30min'}>Sign up Now</button>
+                        <button className="btn-secondary" onClick={() => window.location.href = 'https://cal.com/piyushchandak/30min'}>Book a demo</button>
                     </div>
                 </motion.div>
             </section>
@@ -143,7 +140,7 @@ const Payments = () => {
                                 </li>
                             ))}
                         </ul>
-                        <button className="btn-primary mt-12 w-full" onClick={() => navigate('/signup')}>Sign Up Now</button>
+                        <button className="btn-primary mt-12 w-full" onClick={() => window.location.href = 'https://cal.com/piyushchandak/30min'}>Sign Up Now</button>
                     </motion.div>
 
                     {/* SECURITY */}
@@ -183,7 +180,7 @@ const Payments = () => {
                     <p className="large-p mt-8 italic">Experience the elite standard in POS payments.</p>
                     <button 
                         className="btn-primary mt-16 px-16 py-6 text-2xl flex items-center gap-6 mx-auto group"
-                        onClick={() => navigate('/signup')}
+                        onClick={() => window.location.href = 'https://cal.com/piyushchandak/30min'}
                     >
                         Sign up Now <ArrowRight className="group-hover:translate-x-2 transition-transform" />
                     </button>

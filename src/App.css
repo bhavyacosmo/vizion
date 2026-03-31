@@ -846,11 +846,11 @@ body {
 }
 
 .footer-v3-title {
-  font-size: 2.5rem;
-  font-weight: 800;
+  font-size: 1.6rem;
+  font-weight: 700;
   color: #222;
-  margin-bottom: 40px;
-  letter-spacing: -1px;
+  margin-bottom: 25px;
+  letter-spacing: -0.5px;
 }
 
 .contact-item-group {
@@ -862,10 +862,10 @@ body {
 .footer-contact-link {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
   text-decoration: none;
   color: #333;
-  font-size: 1.5rem;
+  font-size: 1.05rem;
   font-weight: 500;
   transition: transform 0.3s ease;
 }
@@ -887,7 +887,7 @@ body {
 .footer-links-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  gap: 30px;
 }
 
 .footer-v3-col ul {
@@ -903,7 +903,7 @@ body {
 .footer-v3-col ul li a {
   text-decoration: none;
   color: #333;
-  font-size: 1.6rem;
+  font-size: 1.05rem;
   font-weight: 500;
   transition: all 0.3s ease;
   display: inline-block;
@@ -922,7 +922,7 @@ body {
 
 .footer-v3-bottom p {
   color: #666;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 500;
 }
 
@@ -938,13 +938,13 @@ body {
     grid-template-columns: 1fr;
   }
   .footer-v3-title {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
   .footer-contact-link {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .footer-v3-col ul li a {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 }
 
@@ -1497,5 +1497,132 @@ body {
 .split-view.no-media {
   display: block;
   width: 100%;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+
+@media (max-width: 1200px) {
+  .section-container {
+    padding: 4rem 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-main-title {
+    font-size: 3.5rem;
+  }
+  .section-title {
+    font-size: 3.5rem;
+  }
+  .content-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .image-side {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .pt-32 {
+    padding-top: 5rem !important;
+  }
+  
+  .section-container {
+    padding: 3rem 1rem;
+  }
+
+  .hero-main-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .hero-title-small {
+    font-size: 2.2rem !important;
+  }
+
+  .large-p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+  .triple-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+  }
+
+  .bento-tailor-grid {
+    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn-hero-primary,
+  .hero-actions .btn-hero-secondary,
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-container-v2 {
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-right-v2 {
+    display: none; /* Simplest mobile fix: hide complex nav items if no menu is ready */
+  }
+  
+  /* If they have a mobile menu, we'd style it here, but for now we'll ensure basic visibility */
+  .logo-text-v2 {
+    font-size: 1.2rem;
+  }
+
+  .signup-glass-card {
+    padding: 2rem 1.5rem !important;
+  }
+  
+  .glass-card {
+    padding: 2rem 1.5rem !important;
+  }
+
+  .content-stack {
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-main-title {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .hero-title-small {
+    font-size: 1.8rem !important;
+  }
+
+  .hero-badge {
+    padding: 4px 12px;
+    font-size: 0.75rem;
+  }
+
+  .btn-primary, .btn-secondary, .btn-hero-primary {
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+  }
 }
 

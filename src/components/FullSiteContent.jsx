@@ -71,7 +71,7 @@ const FullSiteContent = () => {
                     </p>
 
                     <div className="hero-actions mt-12 flex gap-6">
-                        <Link to="/demo" className="btn-hero-primary" style={{ textDecoration: 'none' }}>Request Demo</Link>
+                        <a href="https://cal.com/piyushchandak/30min" className="btn-hero-primary" style={{ textDecoration: 'none' }}>Request Demo</a>
                         <Link to="/analytics" className="btn-hero-secondary" style={{ textDecoration: 'none' }}>Learn More</Link>
                     </div>
                 </motion.div>

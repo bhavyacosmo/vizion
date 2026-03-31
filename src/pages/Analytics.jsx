@@ -41,7 +41,7 @@ const Analytics = () => {
                         Leverage Vizion's robust analytics tools for real-time insights into the sales trends and data shaping your business, and monitor vital metrics such as revenue and performance.
                     </p>
                     <div className="flex flex-col md:flex-row gap-6 justify-center mb-20">
-                        <button className="btn-primary px-12 py-5 text-xl" onClick={() => navigate('/signup')}>Sign up now</button>
+                        <button className="btn-primary px-12 py-5 text-xl" onClick={() => window.location.href = 'https://cal.com/piyushchandak/30min'}>Sign up now</button>
                     </div>
                 </motion.div>
             </section>
@@ -86,8 +86,8 @@ const Analytics = () => {
                         <h2 className="text-5xl font-bold mb-8 text-gray-900 leading-tight">Set higher standards <br /> for your business</h2>
                         <p className="text-xl text-dim mb-10">Find out how Vizion can improve your business through a personalized demo provided by our team. We'll show you exactly how our data can work for you.</p>
                         <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                            <button className="btn-secondary px-10 py-4" onClick={() => navigate('/demo')}>Contact Us</button>
-                            <button className="flex items-center gap-4 text-xl font-semibold text-gray-900 group" onClick={() => navigate('/demo')}>
+                            <button className="btn-secondary px-10 py-4" onClick={() => window.location.href = 'https://cal.com/piyushchandak/30min'}>Contact Us</button>
+                            <button className="flex items-center gap-4 text-xl font-semibold text-gray-900 group" onClick={() => window.location.href = 'https://cal.com/piyushchandak/30min'}>
                                 <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center transition-colors" style={{ '--tw-bg-opacity': 1 }} onMouseEnter={e => e.currentTarget.style.background = '#ce9036'} onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}>
                                     <Zap className="text-white w-6 h-6" />
                                 </div>
@@ -197,8 +197,8 @@ const Analytics = () => {
                         Build your POS System now.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-6">
-                        <button className="btn-primary px-16 py-6 text-2xl" onClick={() => navigate('/signup')}>Sign up Now</button>
-                        <button className="btn-secondary px-16 py-6 text-2xl" onClick={() => navigate('/signup')}>Shop Vizion</button>
+                        <button className="btn-primary px-16 py-6 text-2xl" onClick={() => window.location.href = 'https://cal.com/piyushchandak/30min'}>Sign up Now</button>
+                        <button className="btn-secondary px-16 py-6 text-2xl" onClick={() => window.location.href = 'https://cal.com/piyushchandak/30min'}>Shop Vizion</button>
                     </div>
                 </motion.div>
             </section>

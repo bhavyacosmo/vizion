@@ -5,10 +5,7 @@ import {
 } from 'lucide-react';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
-import { useNavigate } from 'react-router-dom';
-
 const BulkPricing = () => {
-    const navigate = useNavigate();
     return (
         <div className="pt-32 min-h-screen bg-dark">
             {/* SECTION 1: HERO */}
@@ -27,8 +24,8 @@ const BulkPricing = () => {
                         Unlock growth with Vizion's revolutionary bulk discount feature. Say goodbye to complex pricing and hello to effortless transaction scaling.
                     </p>
                     <div className="flex flex-col md:flex-row gap-8 justify-center mt-12 mb-20">
-                        <button className="btn-primary" onClick={() => navigate('/signup')}>Sign up Now</button>
-                        <button className="btn-secondary" onClick={() => navigate('/demo')}>Book a demo</button>
+                        <button className="btn-primary" onClick={() => window.location.href = 'https://cal.com/piyushchandak/30min'}>Sign up Now</button>
+                        <button className="btn-secondary" onClick={() => window.location.href = 'https://cal.com/piyushchandak/30min'}>Book a demo</button>
                     </div>
                 </motion.div>
 
@@ -69,7 +66,7 @@ const BulkPricing = () => {
                             Discover how our automated systems handle complex calculations, so you can focus on building relationships. Our platform ensures every bulk order is processed with precision and speed.
                         </p>
                         <div className="flex justify-center">
-                            <button className="btn-primary flex items-center gap-4" onClick={() => navigate('/signup')}>
+                            <button className="btn-primary flex items-center gap-4" onClick={() => window.location.href = 'https://cal.com/piyushchandak/30min'}>
                                 <Zap size={18} fill="currentColor" /> Explore Features
                             </button>
                         </div>
@@ -125,7 +122,7 @@ const BulkPricing = () => {
                     <h2 className="section-title uppercase">TRANSFORM YOUR PRICING TODAY</h2>
                     <p className="large-p mt-8">Scale your wholesale and bulk operations with the market's most intuitive POS.</p>
                     <div className="flex justify-center mt-16">
-                        <button className="btn-primary px-16 py-6 text-xl" onClick={() => navigate('/signup')}>Get Started Now</button>
+                        <button className="btn-primary px-16 py-6 text-xl" onClick={() => window.location.href = 'https://cal.com/piyushchandak/30min'}>Get Started Now</button>
                     </div>
                 </motion.div>
             </section>
