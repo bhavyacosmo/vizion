@@ -2,9 +2,12 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
     Zap, Globe, Cloud, Layout, Smartphone, CheckCircle,
-    Database, Shield, PieChart, Users, ArrowRight,
-    ChevronDown, Mail, Phone, MapPin, Box
-} from 'lucide-react'
+    Database, Shield, CheckCircle2, ArrowRight, ArrowLeft, ArrowUpRight, Box, PieChart, Users, ChevronDown, Mail, Phone, MapPin, Check
+} from 'lucide-react';
+import { Link } from 'react-router-dom'
+import Newsletter from './Newsletter';
+import FAQ from './FAQ'
+import Footer from './Footer'
 
 const FAQ_DATA = [
     { q: "1. Is Vizion's smoke shop POS system easy to use?", a: "Yes, our platform is designed to be user-friendly and easy to navigate, even for those who aren't tech-savvy. Our intuitive interface makes it easy to manage your inventory, process payments, and generate reports with just a few clicks." },
@@ -26,17 +29,50 @@ const FullSiteContent = () => {
         visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
     }
 
+    const [mousePos, setMousePos] = useState({ x: 50, y: 50 })
+
+    const handleMouseMove = (e) => {
+        const { left, top, width, height } = e.currentTarget.getBoundingClientRect()
+        const x = ((e.clientX - left) / width) * 100
+        const y = ((e.clientY - top) / height) * 100
+        setMousePos({ x, y })
+    }
+
     return (
         <div className="content-stack">
-            {/* SECTION 1: HERO OVERLAY */}
-            <section className="section-container min-h-screen flex items-center">
-                <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants} className="hero-text-block">
-                    <h2 className="section-title text-left">STREAMLINE YOUR SALES: ADVANCED POS & ONLINE ORDERING FOR AGE-RESTRICTED PRODUCTS</h2>
-                    <p className="large-p">Expand Your Market Reach: Sell Glass, Bongs, Kratom, Delta, CBD, Vapes and Smoking Accessories In-Store and Online for pickup and/or delivery.</p>
-                    <p className="description-p">Vizion introduces an innovative smoke shop pos system. Streamline your business with our user-friendly interface, efficient inventory tracking, and seamless transaction processing. Enhance customer experience and boost your smoke shop's efficiency with Vizion's POS solution. Upgrade today for a smarter retail journey.</p>
-                    <div className="mt-10 flex gap-6">
-                        <button className="btn-primary">Request Demo</button>
-                        <button className="btn-secondary">Learn More</button>
+            {/* SECTION 1: HERO OVERLAY (Redesigned) */}
+            <section className="section-container hero-section-v2 min-h-screen flex items-center">
+                <motion.div 
+                    initial="hidden" 
+                    whileInView="visible" 
+                    viewport={{ once: true }} 
+                    variants={sectionVariants} 
+                    className="hero-text-block"
+                >
+                    <div className="hero-badge">POS & Online Ordering</div>
+                    
+                    <h1 className="hero-main-title">
+                        Streamline Your Sales with <span className="accent-text">Smart POS</span> for Age-Restricted Products
+                    </h1>
+                    
+                    <p className="hero-subtitle">
+                        Sell glass, bongs, kratom, CBD, vapes, and accessories both in-store and online — with seamless pickup and delivery.
+                    </p>
+
+                    <div className="hero-feature-tags">
+                        <div className="feature-tag"><Check size={16} className="inline mr-2 text-accent" /> Inventory Tracking</div>
+                        <div className="feature-tag"><Check size={16} className="inline mr-2 text-accent" /> Fast Checkout</div>
+                        <div className="feature-tag"><Check size={16} className="inline mr-2 text-accent" /> Online Ordering</div>
+                        <div className="feature-tag"><Check size={16} className="inline mr-2 text-accent" /> Compliance Ready</div>
+                    </div>
+
+                    <p className="hero-description">
+                        Vizion POS helps smoke shops run efficiently with an intuitive interface, real-time inventory management, and smooth transaction processing. Improve customer experience and grow your business effortlessly.
+                    </p>
+
+                    <div className="hero-actions mt-12 flex gap-6">
+                        <Link to="/demo" className="btn-hero-primary" style={{ textDecoration: 'none' }}>Request Demo</Link>
+                        <Link to="/analytics" className="btn-hero-secondary" style={{ textDecoration: 'none' }}>Learn More</Link>
                     </div>
                 </motion.div>
             </section>
@@ -68,10 +104,34 @@ const FullSiteContent = () => {
             <section className="section-container">
                 <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
                     <h2 className="section-title text-center">Vizion POS: Tailor Your System to Fit Your Business</h2>
-                    <div className="triple-grid-large mt-12">
-                        <div className="glass-card step-card"><span className="step-num">01</span><h4>Get Started with Vizion POS</h4><p>Start your vizion POS experience now with a free sign-up! Streamline your sales and operations with our advanced, user-friendly system tailored for your retail needs.</p></div>
-                        <div className="glass-card step-card"><span className="step-num">02</span><h4>Choose Your Ideal Hardware</h4><p>Vizion POS offers the freedom to choose hardware that fits your store's unique style and requirements. Enjoy a customized POS experience with our versatile hardware options.</p><img src="/assets/images/QuickveePOS.png" alt="Diverse Hardware" className="w-full h-auto mt-4 rounded-lg shadow-lg" /></div>
-                        <div className="glass-card step-card"><span className="step-num">03</span><h4>Start Adding Inventory</h4><p>Start adding inventory to your Vizion POS and take the first step towards a more organized and profitable business. Our System is designed to simplify and enhance your stock management.</p><a href="https://merchants.quickvee.com/" target="_blank" rel="noopener noreferrer" className="btn-primary mt-6 inline-block">Shop Now</a></div>
+                    <div className="bento-tailor-grid">
+                        {/* Column 1 */}
+                        <div className="bento-card bento-col-1-top bento-item">
+                            <span className="step-num">01</span>
+                            <h4>Get Started with Vizion POS</h4>
+                            <p>Start your vizion POS experience now with a free sign-up! Streamline your sales and operations with our advanced, user-friendly system tailored for your retail needs.</p>
+                        </div>
+                        <div className="bento-card bento-col-1-bottom bento-item">
+                            <span className="step-num">02</span>
+                            <h4>Choose Your Ideal Hardware</h4>
+                            <p>Vizion POS offers the freedom to choose hardware that fits your store's unique style and requirements.</p>
+                        </div>
+
+                        {/* Column 2 */}
+                        <div className="bento-card bento-col-2-full bento-item">
+                            <span className="step-num">03</span>
+                            <h4>Start Adding Inventory</h4>
+                            <p>Start adding inventory to your Vizion POS and take the first step towards a more organized and profitable business. Our System is designed to simplify and enhance your stock management.</p>
+                            <p className="mt-4 text-dim">Easily integrate all your sales channels into one unified platform, simplifying your entire inventory management process.</p>
+                        </div>
+
+                        {/* Column 3 */}
+                        <div className="bento-card bento-image-card bento-col-3-top bento-item">
+                            <img src="/assets/images/VizionPOS.png" alt="Hardware" />
+                        </div>
+                        <div className="bento-card bento-button-card bento-col-3-bottom bento-item">
+                            <Link to="https://merchants.vizion.com/" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ textDecoration: 'none' }}>SHOP NOW</Link>
+                        </div>
                     </div>
                 </motion.div>
             </section>
@@ -89,7 +149,7 @@ const FullSiteContent = () => {
                             <div className="bullet-item"><h4>A Hub of Rewards</h4><p>Imagine your store as a destination for rewards, where every transaction is an opportunity for shoppers to earn and indulge in more. Let your customers earn points as they spend more and reward them with points towards their next purchase.</p></div>
                             <div className="bullet-item"><h4>Elevate Your Store</h4><p>Enrich your store's appeal and attract repeat customers. Our loyalty program will be the new highlight of your store, attracting repeat customers again and again.</p></div>
                         </div>
-                        <button className="btn-primary mt-12">Loyalty Program <ArrowRight size={18} className="inline ml-2" /></button>
+                         <Link to="/loyalty" className="btn-primary mt-12" style={{ textDecoration: 'none', display: 'inline-block' }}>Loyalty Program <ArrowRight size={18} className="inline ml-2" /></Link>
                     </div>
                 </motion.div>
             </section>
@@ -100,7 +160,7 @@ const FullSiteContent = () => {
                     <div className="text-center max-w-4xl mx-auto">
                         <h2 className="section-title">Expand Your Reach: Get Online with Vizion POS</h2>
                         <p className="mb-8 text-xl">With Vizion's smoke shop POS System, transitioning your smoke shop to the online marketplace is effortless. Our team will help your store get online with minimum work from you. Expand your reach beyond the store front, offer customers the convenience of ordering their favorite items for pickup and delivery from your online store.</p>
-                        <button className="btn-secondary">Online Ordering</button>
+                         <Link to="/online-ordering" className="btn-secondary" style={{ textDecoration: 'none', display: 'inline-block' }}>Online Ordering</Link>
                         <img src="/assets/images/ExpandYourReach.png" alt="Online Ordering Platform" className="w-full h-auto mt-12 rounded-2xl shadow-2xl border border-white/10" />
                     </div>
                 </motion.div>
@@ -119,7 +179,7 @@ const FullSiteContent = () => {
 
                         <h4 className="text-xl font-bold mb-2 accent-text">Vizion POS: Enhance Efficiency, Sales, and Customer Loyalty</h4>
                         <p>Our POS system, designed specifically for smoke shops, goes beyond transaction processing; it becomes an essential tool for strategic pricing, inventory management, and customer relationship management. In essence, Vizion’s Smoke shop POS system with inventory management optimizes operational efficiency, drives sales, and nurtures customer loyalty by streamlining inventory tasks.</p>
-                        <button className="btn-primary mt-8">Bulk Pricing</button>
+                         <Link to="/bulk-pricing" className="btn-primary mt-8" style={{ textDecoration: 'none', display: 'inline-block' }}>Bulk Pricing</Link>
                     </div>
                     <div className="image-side"><img src="/assets/images/BulkPricing.png" alt="Bulk Pricing UI" className="w-full h-auto rounded-xl shadow-2xl border border-white/10" /></div>
                 </motion.div>
@@ -134,7 +194,7 @@ const FullSiteContent = () => {
                         <div className="feature-card-v2 glass-card"><Layout className="accent mb-4" size={40} /><h4>Simplify Your Workforce Management</h4><p>Vizion POS makes workforce management a breeze. Effortlessly handle schedules, track hours, and manage roles, all within one seamless platform.</p></div>
                         <div className="feature-card-v2 glass-card"><Smartphone className="accent mb-4" size={40} /><h4>Effortless Staff Creation and Editing</h4><p>Experience the simplicity of managing your smoke shop team with Vizion's smoke shop POS system. Our platform allows effortless creation and editing of staff profiles, ensuring smooth operations and accurate data management in your smoke shop business.</p></div>
                     </div>
-                    <div className="text-center mt-12"><button className="btn-secondary">Employees</button></div>
+                     <div className="text-center mt-12"><Link to="/employees" className="btn-secondary" style={{ textDecoration: 'none', display: 'inline-block' }}>Employees</Link></div>
                 </motion.div>
             </section>
 
@@ -153,7 +213,7 @@ const FullSiteContent = () => {
                             <div className="mod-item"><h4>Tipping</h4><p>Vizion POS streamlines the process of accepting tips, making it a hassle-free experience for both staff and customers.</p></div>
                             <div className="mod-item"><h4>PCI Compliance</h4><p>Experience the security of Vizion's smoke shop POS system as it safely handles credit card transactions, ensuring all data in your smoke shop is stored, processed, and transmitted with utmost security.</p></div>
                         </div>
-                        <button className="btn-primary mt-10">Payments</button>
+                         <Link to="/payments" className="btn-primary mt-10" style={{ textDecoration: 'none', display: 'inline-block' }}>Payments</Link>
                     </div>
                 </motion.div>
             </section>
@@ -165,9 +225,9 @@ const FullSiteContent = () => {
                         <h2 className="section-title">Vizion Analytics</h2>
                         <p className="mb-6 text-xl">With Vizion POS, transitioning your smoke shop to the online marketplace is effortless.</p>
                         <p className="text-dim">Expand your reach beyond the storefront, offer customers the convenience of ordering their favorite items for pickup and delivery.</p>
-                        <button className="btn-primary mt-10">Analytics</button>
+                         <Link to="/analytics" className="btn-primary mt-10" style={{ textDecoration: 'none', display: 'inline-block' }}>Analytics</Link>
                     </div>
-                    <div className="image-side"><img src="/assets/images/QuickveeAnalytics.png" alt="Analytics Dashboard" className="w-full h-auto rounded-xl shadow-2xl border border-white/10" /></div>
+                    <div className="image-side"><img src="/assets/images/VizionAnalytics.png" alt="Analytics Dashboard" className="w-full h-auto rounded-xl shadow-2xl border border-white/10" /></div>
                 </motion.div>
             </section>
 
@@ -179,7 +239,7 @@ const FullSiteContent = () => {
                         <p className="mb-6 text-lg">Vizion POS introduces a customer-friendly store credit feature, empowering merchants to offer credits for future purchases instead of direct refunds. This strategy keeps revenue in-store and nurtures repeat patronage, strengthening customer loyalty and trust.</p>
                         <p className="mb-6 text-lg">Vizion's integrated store credit functionality also streamlines the handling of returns and exchanges.</p>
                         <p className="mb-10 text-lg">Vizion provides efficient monitoring and management of credit balances, ensuring precise and transparent transactions. This approach not only maintains sales but also enhances the overall shopping experience for customers, adding significant value to each interaction.</p>
-                        <button className="btn-secondary mb-12">Store Credits & Refunds</button>
+                         <Link to="/credits" className="btn-secondary mb-12" style={{ textDecoration: 'none', display: 'inline-block' }}>Store Credits & Refunds</Link>
                     </div>
                     <img src="/assets/images/EasyHandlingofStoreCreditsandRefunds.png" alt="Store Credit UI" className="w-full max-w-2xl h-auto rounded-xl shadow-2xl relative z-0 border border-white/10" />
                 </motion.div>
@@ -193,7 +253,7 @@ const FullSiteContent = () => {
                         <h2 className="section-title">Manage Inventory with Ease</h2>
                         <p className="mb-6 text-xl">Efficiently handle everything from introducing new products, crafting variants, to tracking inventory levels with Vizion's robust cloud-based system.</p>
                         <p className="text-dim">Seamlessly integrate all your sales channels into one unified platform, simplifying your entire inventory management process.</p>
-                        <button className="btn-primary mt-10">Inventory Management</button>
+                         <Link to="/inventory" className="btn-primary mt-10" style={{ textDecoration: 'none', display: 'inline-block' }}>Inventory Management</Link>
                     </div>
                 </motion.div>
             </section>
@@ -247,66 +307,10 @@ const FullSiteContent = () => {
                 </motion.div>
             </section>
 
-            {/* SECTION 15: DEMO FORM */}
-            <section id="demo" className="section-container">
-                <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants} className="glass-card demo-section text-center p-16">
-                    <h2 className="section-title">Schedule a Free Demo or Sign Up</h2>
-                    <p className="mb-12 text-xl max-w-2xl mx-auto">What will you get with a demo? A 20-minute demo with our product experts will help you unleash all of Vizion's potential.</p>
-                    <form className="demo-grid-compact max-w-3xl mx-auto text-left space-y-4">
-                        <div className="dual-inputs flex gap-4">
-                            <input type="text" placeholder="First Name" required className="flex-1 p-4 bg-white/5 border border-white/10 rounded focus:border-yellow-500 outline-none" />
-                            <input type="text" placeholder="Last Name" required className="flex-1 p-4 bg-white/5 border border-white/10 rounded focus:border-yellow-500 outline-none" />
-                        </div>
-                        <input type="email" placeholder="Email Address" required className="w-full p-4 bg-white/5 border border-white/10 rounded focus:border-yellow-500 outline-none" />
-                        <input type="tel" placeholder="Phone/Mobile Number" required className="w-full p-4 bg-white/5 border border-white/10 rounded focus:border-yellow-500 outline-none" />
-                        <button type="submit" className="btn-primary w-full py-5 text-xl mt-6">Request Demo</button>
-                    </form>
-                </motion.div>
-            </section>
-
-            {/* SECTION 16: MERCHANT PROMO */}
-            <section className="section-container text-center py-24">
-                <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants} className="flex flex-col items-center">
-                    <h3 className="tagline mb-6">Merchants using Vizion POS & Online Ordering</h3>
-                    <h2 className="section-title">Join Our Customer List to Get Updates and Promos</h2>
-                    <p className="text-2xl text-dim max-w-2xl mx-auto mb-16">Take your smoke shop into the Cloud with Vizion.</p>
-                    <img src="/assets/images/schedule.png" alt="Merchant Tablet Preview" className="w-full max-w-3xl h-auto rounded-2xl shadow-2xl" />
-                </motion.div>
-            </section>
+             <Newsletter />
 
             {/* FOOTER SECTION */}
-            <footer className="footer-v3 bg-black/90 border-t border-white/10 pt-24 pb-12">
-                <div className="section-container">
-                    <div className="footer-grid-main mb-20 flex flex-col md:flex-row justify-between gap-16">
-                        <div className="footer-info max-w-md">
-                            <h3 className="logo-text text-3xl mb-8">VIZION</h3>
-                            <h4 className="text-xl font-bold mb-6 text-white">Contact Us</h4>
-                            <div className="space-y-4 text-lg">
-                                <div className="flex items-center gap-4 text-dim hover:text-yellow-500 transition-colors"><Mail size={24} className="text-yellow-500" /> ravi@viziontools.com</div>
-                                <div className="flex items-center gap-4 text-dim hover:text-yellow-500 transition-colors"><Phone size={24} className="text-yellow-500" /> 929-204-4923</div>
-                            </div>
-                        </div>
-                        <div className="footer-nav md:ml-auto md:pl-24">
-                            <h4 className="text-xl font-bold mb-8 text-white">Quick Links</h4>
-                            <div className="flex gap-16 text-lg">
-                                <ul className="flex flex-col gap-4 list-none m-0 p-0">
-                                    <li><a href="#loyalty" className="text-white hover:text-yellow-500 transition-colors block" style={{ color: 'white' }}>Loyalty Program</a></li>
-                                    <li><a href="#ordering" className="text-white hover:text-yellow-500 transition-colors block" style={{ color: 'white' }}>Online Ordering</a></li>
-                                    <li><a href="#bulk" className="text-white hover:text-yellow-500 transition-colors block" style={{ color: 'white' }}>Bulk Pricing</a></li>
-                                </ul>
-                                <ul className="flex flex-col gap-4 list-none m-0 p-0">
-                                    <li><a href="#employees" className="text-white hover:text-yellow-500 transition-colors block" style={{ color: 'white' }}>Employees</a></li>
-                                    <li><a href="#payments" className="text-white hover:text-yellow-500 transition-colors block" style={{ color: 'white' }}>Payments</a></li>
-                                    <li><a href="#analytics" className="text-white hover:text-yellow-500 transition-colors block" style={{ color: 'white' }}>Analytics</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="footer-bottom border-t border-white/5 pt-10 text-center">
-                        <p className="text-dim text-lg">Copyright 2026 All Rights Reserved Vizion Tools</p>
-                    </div>
-                </div>
-            </footer>
+            <Footer />
         </div>
     )
 }
