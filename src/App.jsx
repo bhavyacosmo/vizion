@@ -18,6 +18,7 @@ import Signup from './pages/Signup';
 
 function App() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <Router>
@@ -61,10 +62,50 @@ function App() {
                 <Phone size={18} className="phone-icon-v2" />
                 <span>929-204-4923</span>
               </div>
+              
+              {/* Desktop Buttons */}
+              <div className="hidden md:flex gap-4">
                 <a href="https://cal.com/piyushchandak/30min" className="btn-navbar-pill" style={{ textDecoration: 'none' }}>Request Demo</a>
-              <a href="https://cal.com/piyushchandak/30min" className="btn-navbar-pill-accent" style={{ textDecoration: 'none' }}>Sign up Now</a>
+                <a href="https://cal.com/piyushchandak/30min" className="btn-navbar-pill-accent" style={{ textDecoration: 'none' }}>Sign up Now</a>
+              </div>
+
+              {/* Mobile Menu Toggle */}
+              <button 
+                className="md:hidden p-2" 
+                style={{ color: 'var(--accent)' }}
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              >
+                <Menu size={32} />
+              </button>
             </div>
           </div>
+
+          {/* Mobile Menu Overlay */}
+          <AnimatePresence>
+            {isMobileMenuOpen && (
+              <motion.div 
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                className="mobile-nav-overlay md:hidden"
+              >
+                <div className="mobile-nav-content">
+                  <a href="https://cal.com/piyushchandak/30min" className="btn-navbar-pill w-full mb-4 text-center" style={{ textDecoration: 'none', display: 'block' }}>Request Demo</a>
+                  <a href="https://cal.com/piyushchandak/30min" className="btn-navbar-pill-accent w-full text-center" style={{ textDecoration: 'none', display: 'block' }}>Sign up Now</a>
+                  
+                  <div className="mobile-pages-links mt-8 pt-8 border-t border-gray-100">
+                    <p className="text-gray-400 uppercase text-xs font-bold mb-4 tracking-widest">Navigation</p>
+                    <Link to="/loyalty" className="block py-3 text-lg font-medium text-gray-800" onClick={() => setIsMobileMenuOpen(false)}>Loyalty Program</Link>
+                    <Link to="/online-ordering" className="block py-3 text-lg font-medium text-gray-800" onClick={() => setIsMobileMenuOpen(false)}>Online Ordering</Link>
+                    <Link to="/bulk-pricing" className="block py-3 text-lg font-medium text-gray-800" onClick={() => setIsMobileMenuOpen(false)}>Bulk Pricing</Link>
+                    <Link to="/employees" className="block py-3 text-lg font-medium text-gray-800" onClick={() => setIsMobileMenuOpen(false)}>Employees</Link>
+                    <Link to="/payments" className="block py-3 text-lg font-medium text-gray-800" onClick={() => setIsMobileMenuOpen(false)}>Payments</Link>
+                    <Link to="/analytics" className="block py-3 text-lg font-medium text-gray-800" onClick={() => setIsMobileMenuOpen(false)}>Analytics</Link>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </nav>
 
         <main className="content-scroller">

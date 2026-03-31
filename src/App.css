@@ -1576,29 +1576,59 @@ body {
     text-align: center;
   }
 
-  .navbar-container-v2 {
-    padding: 0.5rem 1rem;
-  }
-
-  .nav-right-v2 {
-    display: none; /* Simplest mobile fix: hide complex nav items if no menu is ready */
-  }
-  
-  /* If they have a mobile menu, we'd style it here, but for now we'll ensure basic visibility */
-  .logo-text-v2 {
-    font-size: 1.2rem;
-  }
-
-  .signup-glass-card {
-    padding: 2rem 1.5rem !important;
-  }
-  
-  .glass-card {
-    padding: 2rem 1.5rem !important;
-  }
-
   .content-stack {
     overflow-x: hidden;
+  }
+
+  /* Navbar Mobile Fixes */
+  .navbar-container {
+    padding: 0 1rem !important;
+  }
+
+  .logo-text-v2 {
+    font-size: 1.1rem !important;
+    letter-spacing: 0.5px;
+  }
+
+  .navbar-logo-img {
+    height: 30px;
+  }
+
+  .nav-actions-v2 {
+    gap: 0.8rem !important;
+  }
+
+  .dropdown-container {
+    display: none; /* Hide Pages dropdown on small mobile */
+  }
+
+  .btn-navbar-pill, .btn-navbar-pill-accent {
+    padding: 0.6rem 1.2rem !important;
+    font-size: 0.85rem !important;
+    white-space: nowrap;
+  }
+
+  /* Newsletter Mobile Fixes */
+  .newsletter-input-group {
+    flex-direction: column;
+    background: transparent;
+    padding: 0;
+    gap: 1rem;
+    border: none;
+  }
+
+  .n-input {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 100px !important;
+    width: 100%;
+    padding: 15px 25px;
+  }
+
+  .n-submit-btn {
+    width: 100%;
+    padding: 15px;
+    border-radius: 100px !important;
   }
 }
 
@@ -1626,3 +1656,155 @@ body {
   }
 }
 
+/* --- MOBILE NAVIGATION OVERLAY --- */
+.mobile-nav-overlay {
+  position: fixed; /* Keep it fixed to the top */
+  top: 80px;
+  left: 0;
+  width: 100vw;
+  background: #ffffff;
+  z-index: 999;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  border-top: 1px solid #f0f0f0;
+  overflow: hidden;
+}
+
+.mobile-nav-content {
+  padding: 2.5rem 1.5rem;
+  background: #ffffff;
+}
+
+.mobile-nav-content a {
+  text-decoration: none !important;
+}
+
+.mobile-nav-content .btn-navbar-pill {
+  margin-bottom: 12px !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-nav-content .btn-navbar-pill-accent {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-pages-links {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.mobile-pages-links a {
+  display: block !important;
+  padding: 15px 0 !important;
+  color: #333 !important;
+  font-size: 1.15rem !important;
+  font-weight: 500 !important;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.mobile-pages-links a:last-child {
+  border-bottom: none;
+}
+
+/* --- GLOBAL MOBILE RESPONSIVENESS OVERRIDES --- */
+@media (max-width: 768px) {
+  /* Fix height of navbar and overlay top */
+  .navbar-v2 {
+    height: 70px;
+  }
+  .mobile-nav-overlay {
+    top: 70px;
+  }
+
+  /* Scale down large paddings globally on mobile */
+  .py-32, .py-24, .py-20, .pb-40, .py-40 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .p-24, .p-20, .p-16, .p-12, .p-10 {
+    padding: 2rem 1.5rem !important;
+  }
+
+  /* Reduce margins that are too large for mobile */
+  .mt-12, .mt-16, .mt-20, .mb-20, .mb-24 {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  /* Global font size reductions for mobile */
+  .text-5xl { font-size: 2rem !important; line-height: 1.2 !important; }
+  .text-4xl { font-size: 1.7rem !important; line-height: 1.2 !important; }
+  .text-3xl { font-size: 1.4rem !important; }
+  .text-2xl { font-size: 1.25rem !important; }
+  .text-xl { font-size: 1.05rem !important; }
+
+  /* Ensure buttons are appropriately sized and full-width on mobile */
+  .btn-primary, .btn-secondary, .btn-navbar-pill, .btn-navbar-pill-accent {
+    width: 100% !important;
+    padding: 1rem 1.5rem !important;
+    font-size: 1rem !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Grid and Gap adjustments */
+  .grid {
+    gap: 1.5rem !important;
+  }
+
+  /* Hero and Section Title adjustments */
+  .hero-title-small {
+    font-size: 1.8rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .section-title {
+    font-size: 1.8rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .large-p {
+    font-size: 1.05rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Feature content centering */
+  .feature-content-only {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* Prevent horizontal overflow */
+  .section-container {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    overflow-x: hidden;
+  }
+}
+
+/* Visibility Utilities */
+@media (max-width: 767px) {
+  .hidden { display: none !important; }
+}
+
+@media (min-width: 768px) {
+  .md\:flex { display: flex !important; }
+  .md\:hidden { display: none !important; }
+}
+
+@media (max-width: 480px) {
+  .hero-title-small, .section-title {
+    font-size: 1.6rem !important;
+  }
+}
