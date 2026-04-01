@@ -127,7 +127,7 @@ const FullSiteContent = () => {
 
                         {/* Column 3 */}
                         <div className="bento-card bento-image-card bento-col-3-top bento-item">
-                            <img src="/assets/images/VizionPOS.png" alt="Hardware" />
+                            <img src="/assets/images/Gemini_Generated_Image_62kbei62kbei62kb-removebg-preview.png" alt="Hardware" />
                         </div>
                         <div className="bento-card bento-button-card bento-col-3-bottom bento-item">
                             <a href="https://vizionpos.com" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ textDecoration: 'none', display: 'inline-block' }}>SHOP NOW</a>
@@ -227,7 +227,7 @@ const FullSiteContent = () => {
                         <p className="text-dim">Expand your reach beyond the storefront, offer customers the convenience of ordering their favorite items for pickup and delivery.</p>
                          <Link to="/analytics" className="btn-primary mt-10" style={{ textDecoration: 'none', display: 'inline-block' }}>Analytics</Link>
                     </div>
-                    <div className="image-side"><img src="/assets/images/VizionAnalytics.png" alt="Analytics Dashboard" className="w-full h-auto rounded-xl shadow-2xl border border-white/10" /></div>
+                    <div className="image-side"><img src="/assets/images/QuickveeAnalytics.png" alt="Analytics Dashboard" className="w-full h-auto rounded-xl shadow-2xl border border-white/10" /></div>
                 </motion.div>
             </section>
 
